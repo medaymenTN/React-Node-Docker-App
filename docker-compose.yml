@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  gateway:
+    build: ./backend
+    ports:
+      - 4200:4200

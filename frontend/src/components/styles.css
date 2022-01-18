@@ -1,0 +1,11 @@
+.SearchContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+.SearchInput {
+  flex: 1;
+}
