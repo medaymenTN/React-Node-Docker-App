@@ -41,21 +41,31 @@ export const searchCompany = (
     getState: () => RootState
   ) => {
     const currentCompanies = getState().company.cachedData;
-    const array1 = currentCompanies.filter((company: Company) =>
-      checkedSpecialities.some(
-        (currentSpeciality) => company?.speciality === currentSpeciality
+    const filtedElementsBySpeciality = currentCompanies.filter(
+      (company: Company) =>
+        checkedSpecialities.some(
+          (currentSpeciality) => company?.speciality === currentSpeciality
+        )
+    );
+    const filtredElementsByTypedText = currentCompanies.filter(
+      (company: Company) =>
+        company?.name.toLowerCase().includes(currentText.toLocaleLowerCase())
+    );
+    const filteredArray = filtedElementsBySpeciality.filter((checkedValue) =>
+      filtredElementsByTypedText.some(
+        (typedValue) => checkedValue.id === typedValue.id
       )
     );
-    const array2 = currentCompanies.filter((company: Company) =>
-      company?.name.toLowerCase().includes(currentText.toLocaleLowerCase())
-    );
-    const filteredArray = array1.filter((value) =>
-      array2.some((value2) => value.id === value2.id)
-    );
-    if (array1.length > 0 && array2.length === 0) {
-      dispatch(startSearch(array1));
-    } else if (array2.length > 0 && array1.length === 0) {
-      dispatch(startSearch(array2));
+    if (
+      filtedElementsBySpeciality.length > 0 &&
+      filtredElementsByTypedText.length === 0
+    ) {
+      dispatch(startSearch(filtedElementsBySpeciality));
+    } else if (
+      filtredElementsByTypedText.length > 0 &&
+      filtedElementsBySpeciality.length === 0
+    ) {
+      dispatch(startSearch(filtredElementsByTypedText));
     } else {
       dispatch(startSearch(filteredArray));
     }
