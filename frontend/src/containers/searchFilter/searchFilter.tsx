@@ -8,7 +8,7 @@ import {
   Grid,
 } from "@mui/material";
 import React from "react";
-import SearchField from "../../components/searchField";
+import SearchField from "../../components/serachField/searchField";
 import "./styles.css";
 
 const SearchFilter = () => {

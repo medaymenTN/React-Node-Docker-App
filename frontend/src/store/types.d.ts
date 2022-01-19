@@ -1,6 +1,7 @@
+import { ICompanyState } from "./companyStore/types";
+
 type RootState = {
-  user: IUserState;
-  data: IDataState;
+  company: ICompanyState;
 };
 
 export default RootState;

@@ -1,13 +1,6 @@
 import { ActionType } from "typesafe-actions";
+import { Company } from "../../types";
 import * as actions from "./data.action.creators";
-
-type Company = {
-  id: number;
-  name: string;
-  logo: string;
-  speciality: SPECIALTY;
-  city: string;
-};
 
 type ICompanyState = {
   companies: Company[];

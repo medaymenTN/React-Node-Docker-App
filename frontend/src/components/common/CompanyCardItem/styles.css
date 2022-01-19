@@ -1,0 +1,4 @@
+.MuiCardMedia-root.MuiCardMedia-media.MuiCardMedia-img.Card-image {
+  object-fit: contain;
+  height: 140px;
+}
