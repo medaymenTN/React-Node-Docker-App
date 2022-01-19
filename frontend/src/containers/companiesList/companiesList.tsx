@@ -1,8 +1,7 @@
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CompanyCardItem from "../../components/common/CompanyCardItem/CompanyCardItem";
-import ContentPlaceHolder from "../../components/common/ContentPlaceHolder";
 import PlaceholderContent from "../../components/placeholderContent/placeholderContent";
 import { loadCompanies } from "../../store/companyStore/action.async";
 import { ICompanyState } from "../../store/companyStore/types";
@@ -32,13 +31,21 @@ const CompaniesList = () => {
           justifyContent="center"
           container
           spacing={2}
-          columns={{ xs: 4, sm: 8, md: 12 }}
+          columns={{ xs: 1, sm: 8, md: 12 }}
         >
           {companies?.map((company: Company, index: number) => (
-            <Grid item className="grid-item" xs={2} sm={4} md={4}>
+            <Grid
+              key={`${index}-company-item`}
+              item
+              className="grid-item"
+              xs={1}
+              sm={4}
+              md={4}
+            >
               <CompanyCardItem company={company} />
             </Grid>
           ))}
+          {companies.length === 0 && <Typography>There are no results that match your search</Typography>}
         </Grid>
       )}
     </div>

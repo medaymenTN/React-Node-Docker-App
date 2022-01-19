@@ -3,11 +3,17 @@ import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import "./styles.css";
 
-const SearchField = () => {
+interface SearchFilterProps {
+  onTextChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const SearchField = (props: SearchFilterProps) => {
+  const { onTextChange } = props;
   return (
     <Box className="SearchContainer">
       <SearchIcon />
       <Input
+        onChange={onTextChange}
         className="SearchInput"
         placeholder="Search…"
         inputProps={{ "aria-label": "search" }}

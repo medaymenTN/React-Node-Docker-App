@@ -5,3 +5,12 @@ services:
     build: ./backend
     ports:
       - 4200:4200
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - 3000:3000
+    depends_on:
+      - gateway
+    restart: unless-stopped

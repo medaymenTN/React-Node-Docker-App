@@ -5,6 +5,6 @@ export class CompanyController {
   public getAllCompanies = (req: Request, res: Response) => {
     setTimeout(() => {
       return res.status(200).json(data);
-    }, 3000);
+    }, 2000);
   };
 }

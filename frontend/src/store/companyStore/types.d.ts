@@ -4,6 +4,7 @@ import * as actions from "./data.action.creators";
 
 type ICompanyState = {
   companies: Company[];
+  cachedData: Company[];
   loading: boolean;
 };
 

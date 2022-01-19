@@ -1,5 +1,4 @@
-import { applyMiddleware, createStore, compose } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
+import { applyMiddleware, createStore } from "redux";
 import Thunk, { ThunkAction } from "redux-thunk";
 import { AnyAction } from "redux";
 
@@ -7,7 +6,7 @@ import reducers from "./rootReducer";
 
 const store: ReturnType<typeof createStore> = createStore(
   reducers,
-  compose(applyMiddleware(Thunk), composeWithDevTools())
+  applyMiddleware(Thunk)
 );
 export default store;
 

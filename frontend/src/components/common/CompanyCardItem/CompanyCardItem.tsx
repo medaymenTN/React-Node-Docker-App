@@ -7,7 +7,6 @@ import {
 } from "@mui/material";
 import React from "react";
 import { Company } from "../../../types";
-import { getCompanySpeciality } from "../../../utils/utils";
 import "./styles.css";
 
 interface CompanyCardItemProps {
@@ -16,8 +15,7 @@ interface CompanyCardItemProps {
 
 const CompanyCardItem = (props: CompanyCardItemProps) => {
   const { company } = props;
-  const { city, logo, speciality, name } = company;
-  const specialityLabel = getCompanySpeciality(speciality);
+  const { city, logo, name, speciality } = company;
   return (
     <Card sx={{ width: 345, height: 275 }}>
       <CardActionArea>
@@ -32,7 +30,7 @@ const CompanyCardItem = (props: CompanyCardItemProps) => {
             {name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Speciality: {specialityLabel}
+            Speciality: {speciality}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             City: {city}

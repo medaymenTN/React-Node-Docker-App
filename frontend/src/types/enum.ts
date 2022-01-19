@@ -1,7 +1,7 @@
 const enum SPECIALTY {
-  EXCAVATION,
-  PLUMBING,
-  ELECTRICITY,
+  EXCAVATION = "Excavation",
+  PLUMBING = "Plumbing",
+  ELECTRICITY = "Electricity",
 }
 
 export default SPECIALTY;
