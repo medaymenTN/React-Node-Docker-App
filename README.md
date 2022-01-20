@@ -31,13 +31,26 @@ $ http://localhost:4200/
 ## Notes
 
 - If any issues are encoutred with docker you can run both project separately
+- For backend you should have typescript v4+ and ts-node package installed
 - Inside /backend directory run
 
 ```
-$ npm run start:prod
+$ npm install
+```
+
+- Then
+
+```
+$ npm run start:dev
 ```
 
 - Inside /frontend directory run
+
+```
+$ npm install
+```
+
+- Then
 
 ```
 $ npm run start
