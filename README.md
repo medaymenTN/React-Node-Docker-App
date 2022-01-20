@@ -57,3 +57,11 @@ $ npm run start
 ```
 
 - Both application should run on the same urls mentioned before
+
+## Testing
+
+- To run tests move under /frontend directory
+
+```
+$ npm run test
+```

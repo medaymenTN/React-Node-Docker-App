@@ -25,7 +25,7 @@ const CompaniesList = () => {
   return (
     <div className="CompaniesListContainer">
       {loading ? (
-        <PlaceholderContent />
+        <PlaceholderContent data-testid="placeholderContent" />
       ) : (
         <Grid
           justifyContent="center"
@@ -45,7 +45,11 @@ const CompaniesList = () => {
               <CompanyCardItem company={company} />
             </Grid>
           ))}
-          {companies.length === 0 && <Typography>There are no results that match your search</Typography>}
+          {companies.length === 0 && (
+            <Typography data-testid="no-result-message">
+              There are no results that match your search
+            </Typography>
+          )}
         </Grid>
       )}
     </div>
